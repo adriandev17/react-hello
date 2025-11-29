@@ -1,11 +1,54 @@
-/* 
+/* Fondo Oscuro y Espaciado del Jumbotron */
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.hero-section {
+    background-color: #000; 
+    padding-top: 8rem; 
+    padding-bottom: 8rem;
+    position: relative; 
+    overflow: hidden; 
+}
 
-*/
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vw; 
+    height: 80vh; 
+    transform: translate(-50%, -50%); 
+    
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%),
+                radial-gradient(circle, rgba(0, 255, 127, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(80px); 
+    mix-blend-mode: screen;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.section-services {
+    background-color: #121212 !important;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .03) 25%, rgba(255, 255, 255, .03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .03) 75%, rgba(255, 255, 255, .03) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .03) 25%, rgba(255, 255, 255, .03) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .03) 75%, rgba(255, 255, 255, .03) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+}
+
+.dark-card {
+    background-color: #1c1c1c; 
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.dark-card:hover {
+    transform: translateY(-5px); 
+}
+
+.card-list .bi-dot {
+    font-size: 1.5rem;
+    line-height: 0;
+    vertical-align: middle;
+}
